@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlopbfc2wku24"]
+[gd_scene load_steps=15 format=3 uid="uid://dlopbfc2wku24"]
 
 [ext_resource type="Script" uid="uid://doj2hj41vu4pa" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://l2w2m16g4i1g" path="res://assets/abs_blue.png" id="2_0xm2m"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cegihvq2d30kl" path="res://reading_2.gd" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://bsopytiv7qvew" path="res://vrm_reading.gd" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://l2nt4xsg1m10" path="res://mb_reading.gd" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://df2113ov6h024" path="res://line_chart_2d.gd" id="14_vivmo"]
 [ext_resource type="Script" uid="uid://bxvpmj8ux3qyf" path="res://sys_reading.gd" id="14_w48qg"]
 
 [node name="Node" type="Node"]
@@ -244,3 +245,7 @@ theme_override_font_sizes/font_size = 20
 text = "---"
 horizontal_alignment = 1
 script = ExtResource("13_ycdy4")
+
+[node name="LineChart2D" type="Node2D" parent="."]
+position = Vector2(0, -1)
+script = ExtResource("14_vivmo")
