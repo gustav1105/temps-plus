@@ -1,4 +1,6 @@
-# Godot C++ Project
+# Godot C++ Sensors Demo
+
+![UI example](screenshot.png)
 
 This project uses **Godot C++ (GDExtension)** for native code integration.
 
