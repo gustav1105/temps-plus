@@ -1,0 +1,246 @@
+[gd_scene load_steps=14 format=3 uid="uid://dlopbfc2wku24"]
+
+[ext_resource type="Script" uid="uid://doj2hj41vu4pa" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://l2w2m16g4i1g" path="res://assets/abs_blue.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bh113kwuqp2x8" path="res://assets/tachometer_shell.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://0q1i8x2rh5kg" path="res://assets/tachometer_needle.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dq830umv4tcuo" path="res://reading_1.gd" id="4_kek77"]
+[ext_resource type="Script" uid="uid://xsq70wqxl45c" path="res://needle.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://7n7poinn0nvo" path="res://assets/tachometer_shell_small.png" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://6v8qhjjh4kgh" path="res://assets/tachometer_needle_small.png" id="7_272bh"]
+[ext_resource type="Script" uid="uid://uqkkgyhuctfr" path="res://needle_2.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://cegihvq2d30kl" path="res://reading_2.gd" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://bsopytiv7qvew" path="res://vrm_reading.gd" id="12_dg77c"]
+[ext_resource type="Script" uid="uid://l2nt4xsg1m10" path="res://mb_reading.gd" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://bxvpmj8ux3qyf" path="res://sys_reading.gd" id="14_w48qg"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_ig7tw")
+
+[node name="AppScreen" type="Node2D" parent="."]
+
+[node name="BGColor" type="ColorRect" parent="AppScreen"]
+offset_right = 1161.0
+offset_bottom = 649.0
+color = Color(0.07683582, 0.07683582, 0.07683582, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BGTexture" type="TextureRect" parent="AppScreen"]
+offset_left = -58.0
+offset_top = -172.0
+offset_right = 1194.0
+offset_bottom = 856.0
+texture = ExtResource("2_0xm2m")
+
+[node name="Speedometer" type="Node2D" parent="AppScreen"]
+
+[node name="Dial" type="TextureRect" parent="AppScreen/Speedometer"]
+offset_left = 475.0
+offset_top = 197.0
+offset_right = 1131.0
+offset_bottom = 921.0
+texture = ExtResource("3_h2yge")
+
+[node name="Index" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 766.0
+offset_top = 481.0
+offset_right = 832.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 32
+text = "CPU"
+
+[node name="Needle" type="Sprite2D" parent="AppScreen/Speedometer"]
+position = Vector2(801, 556)
+rotation = 1.134464
+texture = ExtResource("4_1bvp3")
+centered = false
+offset = Vector2(-38, -38)
+script = ExtResource("5_lquwl")
+
+[node name="Clockspeed1" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 642.0
+offset_top = 609.0
+offset_right = 660.0
+offset_bottom = 702.0
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Clockspeed2" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 629.0
+offset_top = 508.0
+offset_right = 666.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 32
+text = "20
+
+"
+
+[node name="Clockspeed3" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 662.0
+offset_top = 421.0
+offset_right = 699.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 32
+text = "40
+
+"
+
+[node name="Clockspeed4" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 735.0
+offset_top = 376.0
+offset_right = 772.0
+offset_bottom = 565.0
+theme_override_font_sizes/font_size = 32
+text = "60
+
+
+"
+
+[node name="Clockspeed5" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 822.0
+offset_top = 379.0
+offset_right = 859.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 32
+text = "80
+
+
+"
+
+[node name="Clockspeed6" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 878.0
+offset_top = 429.0
+offset_right = 933.0
+offset_bottom = 618.0
+theme_override_font_sizes/font_size = 32
+text = "100
+
+"
+
+[node name="Reading1" type="Label" parent="AppScreen/Speedometer"]
+offset_left = 613.0
+offset_top = 588.0
+offset_right = 994.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0.8665581, 0.8755739, 0.82812804, 1)
+theme_override_font_sizes/font_size = 32
+text = "---"
+horizontal_alignment = 1
+script = ExtResource("4_kek77")
+
+[node name="Speedometer2" type="Node2D" parent="."]
+
+[node name="Dial2" type="TextureRect" parent="Speedometer2"]
+offset_left = 259.0
+offset_top = 393.0
+offset_right = 687.0
+offset_bottom = 843.0
+texture = ExtResource("6_7mycd")
+
+[node name="Index2" type="Label" parent="Speedometer2"]
+offset_left = 382.0
+offset_top = 549.0
+offset_right = 471.0
+offset_bottom = 614.0
+theme_override_font_sizes/font_size = 22
+text = "GPU
+"
+horizontal_alignment = 1
+
+[node name="Needle2" type="Sprite2D" parent="Speedometer2"]
+position = Vector2(424.99997, 599.00006)
+rotation = 1.2217305
+scale = Vector2(1.151656, 1.1554451)
+texture = ExtResource("7_272bh")
+offset = Vector2(10, 39)
+script = ExtResource("8_5vw27")
+
+[node name="Clockspeed2-1" type="Label" parent="Speedometer2"]
+offset_left = 327.0
+offset_top = 618.0
+offset_right = 367.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="Clockspeed2-2" type="Label" parent="Speedometer2"]
+offset_left = 315.0
+offset_top = 556.0
+offset_right = 355.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 22
+text = "20"
+
+[node name="Clockspeed2-3" type="Label" parent="Speedometer2"]
+offset_left = 342.0
+offset_top = 505.0
+offset_right = 382.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 22
+text = "40"
+
+[node name="Clockspeed2-4" type="Label" parent="Speedometer2"]
+offset_left = 389.0
+offset_top = 476.0
+offset_right = 429.0
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 22
+text = "60"
+
+[node name="Clockspeed2-5" type="Label" parent="Speedometer2"]
+offset_left = 443.0
+offset_top = 475.0
+offset_right = 483.0
+offset_bottom = 506.0
+theme_override_font_sizes/font_size = 22
+text = "80"
+
+[node name="Clockspeed2-6" type="Label" parent="Speedometer2"]
+offset_left = 475.0
+offset_top = 506.0
+offset_right = 552.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 22
+text = "100"
+
+[node name="Reading2" type="Label" parent="Speedometer2"]
+offset_left = 313.0
+offset_top = 615.0
+offset_right = 540.0
+offset_bottom = 660.0
+theme_override_colors/font_color = Color(0.8665581, 0.8755739, 0.82812804, 1)
+theme_override_font_sizes/font_size = 22
+text = "---"
+horizontal_alignment = 1
+script = ExtResource("10_4c57u")
+
+[node name="VRMReading" type="Label" parent="."]
+offset_left = 1014.0
+offset_top = 610.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 20
+text = "---"
+horizontal_alignment = 1
+script = ExtResource("12_dg77c")
+
+[node name="SYSReading" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 572.0
+offset_right = 1152.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 20
+text = "---"
+horizontal_alignment = 1
+script = ExtResource("14_w48qg")
+
+[node name="MBReading" type="Label" parent="."]
+offset_left = 1017.0
+offset_top = 531.0
+offset_right = 1152.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 20
+text = "---"
+horizontal_alignment = 1
+script = ExtResource("13_ycdy4")

@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "test_library_init"
+compatibility_minimum = 4.5
+compatibility_maximum = 4.5
+
+[libraries]
+linux.debug.x86_64 = "res://libtest.so"
+linux.release.x86_64 = "res://libtest.so"

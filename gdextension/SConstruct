@@ -1,0 +1,30 @@
+import os
+from SCons.Script import DefaultEnvironment, SConscript, Glob, Default
+
+# Build godot-cpp first
+SConscript('godot-cpp/SConstruct')
+
+env = DefaultEnvironment()
+
+env.Append(CPPPATH=[
+    'src',
+    'godot-cpp/include',
+    'godot-cpp/gen/include',
+    'godot-cpp/gdextension'
+])
+
+# Collect all sources
+src = Glob('src/*.cpp')
+
+# Path to the static Godot C++ library
+godot_cpp_lib = 'godot-cpp/bin/libgodot-cpp.linux.template_debug.x86_64.a'
+
+# Build shared library and link Godot C++ library
+sharedlib = env.SharedLibrary(
+    target=os.path.join('..', 'libtest'),
+    source=src,
+    LIBS=[env.File(godot_cpp_lib), 'sensors'],
+    LIBPATH=['godot-cpp/bin'],
+)
+
+Default(sharedlib)

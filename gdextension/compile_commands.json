@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/home/gus/Documents/GodotUI/temps-plus/temps-plus/gdextension",
+    "command": "g++ -std=c++17 -fPIC -Isrc -Igodot-cpp/include -Igodot-cpp/gen/include -Igodot-cpp/gdextension -c src/test.cpp -o src/test.os",
+    "file": "src/test.cpp"
+  }
+]
